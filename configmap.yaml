@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: photostudio-config
+  namespace: photostudio-ns
+data:
+  MONGODB_AUTH_URI: "mongodb://mongodb:27017/artgallery"
+  MONGODB_FEEDBACK_URI: "mongodb://mongodb:27017/artgallery"
+  MONGODB_URI: "mongodb://mongodb:27017"
+  PORT: "3000"
