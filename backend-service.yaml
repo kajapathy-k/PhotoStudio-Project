@@ -4,10 +4,10 @@ metadata:
   name: photostudio-backend-service
   namespace: photostudio-ns
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: photostudio-backend
   ports:
     - port: 3000
       targetPort: 3000
-      nodePort: 30007
+      # nodePort: 30007
