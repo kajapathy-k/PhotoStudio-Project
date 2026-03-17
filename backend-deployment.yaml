@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: photostudio-backend
+  namespace: photostudio-ns
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: photostudio-backend
+  template:
+    metadata:
+      labels:
+        app: photostudio-backend
+    spec:
+      containers:
+      - name: backend
+        image: kajapathyk/photo-app:v1.0.0
+        ports:
+        - containerPort: 3000
+        envFrom:
+        - configMapRef:
+            name: photostudio-config
